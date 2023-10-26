@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 
 <style>
+    /* set the fonts for the header and the paragraph */
     h1 {
         font-family: 'Times New Roman', Times, serif;
     }
@@ -11,6 +12,37 @@
         font-size: larger;
         line-height: 1.5;
     }
+
+    /* Style the dropdown menu */
+
+    div.dropdown{
+        display: inline-block;
+    }
+
+    div.dropdown-content{
+        display: none;
+        position: absolute;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+    }
+
+    div.dropdown:hover div.dropdown-content {
+        display: block;
+    }
+
+    div.dropdown-content a {
+        display: block;
+        color: #000000;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    div.dropdown-content a:hover {
+        color: #FFFFFF;
+        background-color: #00A4BD;
+    }
+    
 </style>
 
 <body>
@@ -26,7 +58,14 @@
 
     <h2> Histogram </h2>
     <p>a paragraph explain the purpose of the Histogram</p>
-    <p> add a dropdown menu</p>
+    <!-- The dropdown menu division object is now working but we need to keep it at the same page rather than placing an URL 
+         The Additional files are test files, you can ignore them-->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="tree.html">Link 1</a>
+          <a href="dendrogram.html">Link 2</a>
+        </div>
     <p>put the Histogram here</p>
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
