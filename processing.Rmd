@@ -1,0 +1,67 @@
+---
+title: "DS 330 Data Processing"
+author: "Eric Wu"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+# Read the data
+sleep <- read.csv("sleep.csv")
+
+# Convert blood pressure to two numerical scales
+sleep <- sleep %>%
+  separate(Blood.Pressure, c("place1", "place2")) %>% # Separate blood pressure into systolic and diastolic measures
+  mutate(
+    Systolic = as.integer(place1),
+    Diastolic = as.integer(place2)
+  ) %>%
+  select(-place1, -place2)
+```
+
+```{r}
+# Extract numerical columns
+age <- sleep$Age
+duration <- sleep$Sleep.Duration
+quality <- sleep$Quality.of.Sleep
+physical <- sleep$Physical.Activity.Level
+stress <- sleep$Stress.Level
+heart <- sleep$Heart.Rate
+daily <- sleep$Daily.Steps
+systolic <- sleep$Systolic
+diastolic <- sleep$Diastolic
+```
+
+```{r}
+age_class <- unique(age)
+age_count <- c()
+age_class
+```
+
+```{r}
+# Output CSV file
+write.csv(age,"C:\\Users\\wue77\\Documents\\GitHub\\Final_Project_DS_330\\data\\age.csv", row.names = FALSE)
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

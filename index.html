@@ -13,34 +13,29 @@
         line-height: 1.5;
     }
 
-    /* Style the dropdown menu */
+    .bar {
+        fill: steelblue;
+    }       
 
-    div.dropdown{
-        display: inline-block;
+    .xaxis text {
+        font: 10px sans-serif;
+    }
+    .yaxis text {
+        font: 10px sans-serif;
     }
 
-    div.dropdown-content{
-        display: none;
-        position: absolute;
-        width: 100%;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+    .xaxis path,
+    .xaxis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
     }
 
-    div.dropdown:hover div.dropdown-content {
-        display: block;
-    }
-
-    div.dropdown-content a {
-        display: block;
-        color: #000000;
-        padding: 5px;
-        text-decoration: none;
-    }
-
-    div.dropdown-content a:hover {
-        color: #FFFFFF;
-        background-color: #00A4BD;
+    .yaxis path,
+    .yaxis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
     }
     
 </style>
@@ -60,12 +55,23 @@
     <p>a paragraph explain the purpose of the Histogram</p>
     <!-- The dropdown menu division object is now working but we need to keep it at the same page rather than placing an URL 
          The Additional files are test files, you can ignore them-->
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="test files/dendrogram.html">Link 1</a>
-          <a href="test files/tree.html">Link 2</a>
-        </div>
+    <head>
+        <select id = "hist">
+            <option>Select A Variable</option>
+            <option value="age">Age</option> 
+            <option value="duration">Sleep Duration</option>
+            <option value="quality">Quality of Sleep</option>
+            <option value="physical">Physical Activity Level</option>
+            <option value="stress">Stress Level</option>
+            <option value="heart">Heart Rate</option>
+            <option value="steps">Daily Steps</option>
+            <option value="systolic">Systolic Blood Pressure</option>
+            <option value="diastolic">Diastolic Blood Pressure</option>
+        </select>
+        <svg class="chart"></svg>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src = "histogram.js"></script>   
+    </head>
     <p>put the Histogram here</p>
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
