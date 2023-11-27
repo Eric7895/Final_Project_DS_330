@@ -76,8 +76,8 @@
     <p>The interactive histogram allows the user to switch different views and check the distribution of different quantitative variables for the sleep exercise dataset.</p>
     <!-- The dropdown menu division object is now working but we need to keep it at the same page rather than placing an URL 
          The Additional files are test files, you can ignore them-->
-    <head>
-        <select id = "hist", position:relative>
+    <div>
+        <select id = "hist">
             <option>Select A Variable</option>
             <option value="age">Age</option> 
             <option value="duration">Sleep Duration</option>
@@ -92,8 +92,23 @@
         <svg class="chart"></svg>
         <script src="//d3js.org/d3.v3.min.js"></script>
         <script src = "histogram.js"></script>   
-    </head>
+    </div>
 
+    <h2> Bar Graph </h2>
+    <p>a paragraph explain the purpose of the Bar graph</p>
+    <p> add a dropdown menu</p>
+    <div>
+        <select id = "box">
+            <option>Select A Variable</option>
+            <option value="gender">Gender</option> 
+            <option value="occupation">Occupation</option>
+            <option value="BMI">BMI Category</option>
+            <option value="disorder">Sleep Disorder</option>
+        </select>
+        <svg class="chart"></svg>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src = "bar.js"></script>   
+    </div>
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
     <p>a paragrpah explain the purpose of the parallel Coordinates</p>
@@ -105,12 +120,6 @@
     <p>a paragraph explain the purpose of the Side-By-Side BoxPlot</p>
     <p> add a dropdown menu</p>
     <p>put the Side-By-Side BoxPlot here</p>
-
-    <h2> Bar Graph </h2>
-    <p>a paragraph explain the purpose of the Bar graph</p>
-    <p> add a dropdown menu</p>
-    <p>put the Bar Graph</p>
-
 
     <!--
         Here's a HTML manual where we will keep track of all the meaning of the tags,
