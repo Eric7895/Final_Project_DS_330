@@ -49,14 +49,35 @@
     <h1> <center> Series of Data Analytical Tools With the Sleep Exercise Dataset </center></h1>
 
     <h2> Background </h2>
-    <p> Explained the dataset, talk about the variables and where we get the data</p>
+    <p> The dataset "Sleep Health and Lifestyle" can be download freely from Kaggle.com, the dataset is primarily design for various classification tasks as the goal is to identify whether people have any kinds of sleep disorders based on their Lifestyle <br>
+        choices. The dataset includeds 374 observations and 13 variables regarding their health, exercise, and sleep status. Some of the important variables included: <br>
+    </p>
 
+    <ul>
+        <li>Gender: The gender of the person (Male/Female)</li>
+        <li>Age: The age of the person in years</li>
+        <li>Occupation: The occupation or profession of the person</li>
+        <li>Sleep Duration (hours): The number of hours the person sleeps per day</li>
+        <li>Quality of Sleep (scale: 1-10): A subjective rating of the quality of sleep, ranging from 1 to 10</li>
+        <li>Physical Activity Level (minutes/day): The number of minutes the person engages in physical activity daily</li>
+        <li>Stress Level (scale: 1-10): A subjective rating of the stress level experienced by the person, ranging from 1 to 10</li>
+        <li>BMI Category: The BMI category of the person (e.g., Underweight, Normal, Overweight)</li>
+        <li>Blood Pressure (systolic/diastolic): The blood pressure measurement of the person</li>
+        <li>Heart Rate (bpm): The resting heart rate of the person in beats per minute</li>
+        <li>Daily Steps: The number of steps the person takes per day</li>
+        <li>Sleep Disorder: The presence or absence of a sleep disorder in the person (None, Insomnia, Sleep Apnea)</li>
+    </ul>
+
+    <p>Source of the dataset: https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset <br>
+       The dataset is uploaded by LAKSIKA THARMALINGAM
+    </p>
+        
     <h2> Histogram </h2>
-    <p>a paragraph explain the purpose of the Histogram</p>
+    <p>The interactive histogram allows the user to switch different views and check the distribution of different quantitative variables for the sleep exercise dataset.</p>
     <!-- The dropdown menu division object is now working but we need to keep it at the same page rather than placing an URL 
          The Additional files are test files, you can ignore them-->
     <head>
-        <select id = "hist">
+        <select id = "hist", position:relative>
             <option>Select A Variable</option>
             <option value="age">Age</option> 
             <option value="duration">Sleep Duration</option>
@@ -72,7 +93,7 @@
         <script src="//d3js.org/d3.v3.min.js"></script>
         <script src = "histogram.js"></script>   
     </head>
-    <p>put the Histogram here</p>
+
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
     <p>a paragrpah explain the purpose of the parallel Coordinates</p>

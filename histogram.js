@@ -5,44 +5,46 @@ var margin = {top: 50, right: 30, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
-//create the chart
-var chart = d3.select(".chart")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-//scale of x axis
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], 0.09); // Determine the space between each bar
-
-//scale of y axis
-var y = d3.scale.linear()
-    .range([height, 0]);
-
-//define axes
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
-
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left");
-
 function update(new_data) {
+
+    d3.select(".chart").selectAll("*").remove();
+
+    //create the chart
+    var chart = d3.select(".chart")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    //scale of x axis
+    var x = d3.scale.ordinal()
+        .rangeRoundBands([0, width], 0.09); // Determine the space between each bar
+
+    //scale of y axis
+    var y = d3.scale.linear()
+        .range([height, 0]);
+
+    //define axes
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
 
     var bardata=[];
     var y_flag = 0; // 0 value ascending 1 value descending 
     var x_flag = 0; // 0 name ascending 1 name desending 
 
-    d3.tsv(new_data, type, function(error, data) {
+    d3.csv(new_data, type, function(error, data) {
 
         //passing the data to bardata
         bardata = data;
         
         //defining the axes
         x.domain(bardata.map(function(d) { return d.name; }));
-        y.domain([0, d3.max(bardata, function(d) { return d.number; })]);
+        y.domain([0, d3.max(bardata, function(d) { return +d.number; })]);
         //x axis
         chart.append("g")
            .attr("class", "xaxis")
@@ -79,12 +81,12 @@ function update(new_data) {
                 if (y_flag == 0) {
                     //console.log ("Clicking location: x " + xPos + ", y "+ yPos)
                     console.log(bardata)
-                    bardata.sort(function(a,b) {return d3.ascending(a.number, b.number)})
+                    bardata.sort(function(a,b) {return d3.ascending(parseInt(a.number), parseInt(b.number))})
                     updateAxis()
                     y_flag = 1
                 } else if (y_flag == 1) {
                     console.log ("Clicking location: x " + xPos + ", y "+ yPos)
-                    bardata.sort(function(a,b) {return d3.descending(a.number, b.number)})
+                    bardata.sort(function(a,b) {return d3.descending(parseInt(a.number), parseInt(b.number))})
                     updateAxis()
                     y_flag = 0
                 }
@@ -134,6 +136,40 @@ d3.select('#hist')
                 hist_data = '/data/duration.csv'
                 console.log(hist_data)
                 break;
+            }
+            case 'quality' : {
+                hist_data = '/data/quality.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'physical': {
+                hist_data = '/data/physical.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'stress' : {
+                hist_data = '/data/stress.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'heart' : {
+                hist_data = '/data/heart.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'steps': {
+                hist_data = '/data/daily.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'systolic': {
+                hist_data = '/data/systolic.csv'
+                console.log(hist_data)
+                break;
+            }
+            case 'diastolic' : {
+                hist_data = '/data/diastolic.csv'
+                console.log(hist_data)
             }
         }
         update(hist_data)
