@@ -1,4 +1,4 @@
-var hist_data = '/data/age.csv'
+var hist_data = '/data/gender.csv'
 
 //margins, width, and height of the chart
 var margin = {top: 50, right: 30, bottom: 30, left: 40},
@@ -124,53 +124,28 @@ function update(new_data) {
 
 update(hist_data)
 
-d3.select('#hist')
+d3.select('#box')
     .on('change', function() {
         var option = d3.select(this)
             .property('value')
         switch(option) {
-            case 'age': {
-                hist_data = '/data/age.csv'
+            case 'gender': {
+                hist_data = '/data/gender.csv'
                 console.log(hist_data)
                 break;
             }
-            case 'duration': {
-                hist_data = '/data/duration.csv'
+            case 'occupation': {
+                hist_data = '/data/occupation.csv'
                 console.log(hist_data)
                 break;
             }
-            case 'quality' : {
-                hist_data = '/data/quality.csv'
+            case 'BMI': {
+                hist_data = '/data/BMI.csv'
                 console.log(hist_data)
                 break;
             }
-            case 'physical': {
-                hist_data = '/data/physical.csv'
-                console.log(hist_data)
-                break;
-            }
-            case 'stress' : {
-                hist_data = '/data/stress.csv'
-                console.log(hist_data)
-                break;
-            }
-            case 'heart' : {
-                hist_data = '/data/heart.csv'
-                console.log(hist_data)
-                break;
-            }
-            case 'steps': {
-                hist_data = '/data/daily.csv'
-                console.log(hist_data)
-                break;
-            }
-            case 'systolic': {
-                hist_data = '/data/systolic.csv'
-                console.log(hist_data)
-                break;
-            }
-            case 'diastolic' : {
-                hist_data = '/data/diastolic.csv'
+            case 'disorder': {
+                hist_data = '/data/disorder.csv'
                 console.log(hist_data)
             }
         }
