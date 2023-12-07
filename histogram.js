@@ -1,11 +1,12 @@
 var hist_data = '/data/age.csv'
+var color = "#FF0000"
 
 //margins, width, and height of the chart
 var margin = {top: 50, right: 30, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
-function update(new_data) {
+function update(new_data, color) {
 
     d3.select(".chart").selectAll("*").remove();
 
@@ -64,12 +65,13 @@ function update(new_data) {
             .attr("y", function(d) { return y(d.number); })
             .attr("height", function(d) { return height - y(d.number); })
             .attr("width", x.rangeBand())
-            .append("title")
-            .text((d) => `Name: ${d.name}, Frequency: ${d.number}`)
+            .style("fill", color)
             .on("mouseover", function () {
-                console.log("Over at x: "+d3.mouse(this)[0]+" y: "+d3.mouse(this)[1]+d3.select(this).style("fill", "#00FFFF"));})
+                console.log("Over at x: "+d3.mouse(this)[0]+" y: "+d3.mouse(this)[1]+d3.select(this).style("fill", "#FFFF00"));})
             .on("mouseout", function () {
-                console.log("Out at x: "+d3.mouse(this)[0]+" y: "+d3.mouse(this)[1]+d3.select(this).style("fill", "steelblue"));})
+                console.log("Out at x: "+d3.mouse(this)[0]+" y: "+d3.mouse(this)[1]+d3.select(this).style("fill", color));})
+            .append("title")
+            .text((d) => `Class: ${d.name}, Frequency: ${d.number}`)
     });
 
     //Clicking on an axis to sort the data
@@ -122,7 +124,7 @@ function update(new_data) {
     }
 }
 
-update(hist_data)
+update(hist_data, color)
 
 d3.select('#hist')
     .on('change', function() {
@@ -131,48 +133,81 @@ d3.select('#hist')
         switch(option) {
             case 'age': {
                 hist_data = '/data/age.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'duration': {
                 hist_data = '/data/duration.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'quality' : {
                 hist_data = '/data/quality.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'physical': {
                 hist_data = '/data/physical.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'stress' : {
                 hist_data = '/data/stress.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'heart' : {
                 hist_data = '/data/heart.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'steps': {
                 hist_data = '/data/daily.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'systolic': {
                 hist_data = '/data/systolic.csv'
+                color = "#FF0000"
                 console.log(hist_data)
                 break;
             }
             case 'diastolic' : {
                 hist_data = '/data/diastolic.csv'
+                color = "#FF0000"
+                console.log(hist_data)
+                break;
+            }
+            case 'gender': {
+                hist_data = '/data/gender.csv'
+                color = "#FFA500"
+                console.log(hist_data)
+                break;
+            }
+            case 'occupation': {
+                hist_data = '/data/occupation.csv'
+                color = "#FFA500"
+                console.log(hist_data)
+                break;
+            }
+            case 'BMI': {
+                hist_data = '/data/BMI.csv'
+                color = "#FFA500"
+                console.log(hist_data)
+                break;
+            }
+            case 'disorder': {
+                hist_data = '/data/disorder.csv'
+                color = "#FFA500"
                 console.log(hist_data)
             }
         }
-        update(hist_data)
+        update(hist_data, color)
     })

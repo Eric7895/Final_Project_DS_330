@@ -72,13 +72,15 @@
        The dataset is uploaded by LAKSIKA THARMALINGAM
     </p>
         
-    <h2> Histogram </h2>
-    <p>The interactive histogram allows the user to switch different views and check the distribution of different quantitative variables for the sleep exercise dataset.</p>
-    <!-- The dropdown menu division object is now working but we need to keep it at the same page rather than placing an URL 
-         The Additional files are test files, you can ignore them-->
+    <h2> Distribution Plot </h2>
+    <p style="display:inline">This interactive histogram/bar chart allows the user to switch different views and check the distribution of all the variables for the sleep exercise dataset. In addition to the basic switch feature using the dropdown menu, the plot will present <br>
+       two different colors to separate the <p style="display:inline"><FONT COLOR="#FF0000">quantitative</FONT></p> <p style="display:inline">and</p> <p style="display:inline"><FONT COLOR="FFA500">categorical</FONT></p> <p style="display:inline">variables, making it easier for the user to understand the type of the data without reading the plot. Moreover, each bar shares the highlight feature and a tooltip that will allow <br>
+        the user to focus on the class that they are interested in.
+     </p></p>
+     
     <div>
         <select id = "hist">
-            <option>Select A Variable</option>
+            <option>Select A Quantitative Variable</option>
             <option value="age">Age</option> 
             <option value="duration">Sleep Duration</option>
             <option value="quality">Quality of Sleep</option>
@@ -88,18 +90,7 @@
             <option value="steps">Daily Steps</option>
             <option value="systolic">Systolic Blood Pressure</option>
             <option value="diastolic">Diastolic Blood Pressure</option>
-        </select>
-        <svg class="chart"></svg>
-        <script src="//d3js.org/d3.v3.min.js"></script>
-        <script src = "histogram.js"></script>   
-    </div>
-
-    <h2> Bar Graph </h2>
-    <p>a paragraph explain the purpose of the Bar graph</p>
-    <p> add a dropdown menu</p>
-    <div>
-        <select id = "box">
-            <option>Select A Variable</option>
+            <option>Select A Categorical Variable</option>
             <option value="gender">Gender</option> 
             <option value="occupation">Occupation</option>
             <option value="BMI">BMI Category</option>
@@ -107,8 +98,7 @@
         </select>
         <svg class="chart"></svg>
         <script src="//d3js.org/d3.v3.min.js"></script>
-        <script src = "bar.js"></script>   
-    </div>
+        <script src = "histogram.js"></script>   
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
     <p>a paragrpah explain the purpose of the parallel Coordinates</p>
