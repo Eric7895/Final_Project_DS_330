@@ -37,6 +37,24 @@
     stroke: #000;
     shape-rendering: crispEdges;
     }
+
+    .polyline path {
+    fill: none;
+    stroke: #666;
+    shape-rendering: crispEdges;
+    }
+
+    .axis line,
+    .axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    }
+
+    .axis text {
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    cursor: move;
+    }
     
 </style>
 
@@ -78,7 +96,7 @@
         the user to focus on the class that they are interested in.
      </p></p>
      
-    <div>
+    <div id = "distribution">
         <select id = "hist">
             <option>Select A Quantitative Variable</option>
             <option value="age">Age</option> 
@@ -98,13 +116,18 @@
         </select>
         <svg class="chart"></svg>
         <script src="//d3js.org/d3.v3.min.js"></script>
-        <script src = "histogram.js"></script>   
+        <script src = "histogram.js"></script>  
+    </div> 
 
     <h2> Parallel Coordinates and Scatter Plot </h2>
     <p>a paragrpah explain the purpose of the parallel Coordinates</p>
-    <p>a paragraph explain the purpose of the Scatter PLot</p>
-    <p> add a dropdown menu</p>
-    <p>put the Scatter Plot here along with the parallel coordinates</p>
+    
+    <div id = "pc">
+        <svg class="chart"></svg>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src = "pc.js">   </script>
+    </div>
+        
 
     <h2> Side-By-Side BoxPlot </h2>
     <p>a paragraph explain the purpose of the Side-By-Side BoxPlot</p>
