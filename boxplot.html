@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+    .boxplot rect {
+        fill: #69b3a2;
+        stroke: black;
+    }
+
+    .boxplot circle {
+        fill: red;
+    }
+
+    .boxplot line {
+        stroke: black;
+    }
+</style>
+
+<body>
+
+    <div>
+        <select id="boxplotVariable">
+            <option>Select A Variable</option>
+            <option value="age">Age</option>
+            <option value="duration">Sleep Duration</option>
+            <!-- Add more options as needed -->
+        </select>
+        <svg class="boxplot"></svg>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="boxplot.js"></script>
+    </div>
+
+</body>
+
+</html>
