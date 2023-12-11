@@ -23,7 +23,9 @@ var cars = [];
 //    dots = [];
 
 //create the svg
-var svg = d3.select(".chart")
+
+var pc = d3.select("#pc")
+var svg = pc.select(".chart")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")

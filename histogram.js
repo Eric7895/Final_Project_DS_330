@@ -1,17 +1,19 @@
 var hist_data = '/data/age.csv'
 var color = "#FF0000"
 
-//margins, width, and height of the chart
-var margin = {top: 50, right: 30, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
-
 function update(new_data, color) {
 
     d3.select(".chart").selectAll("*").remove();
 
+    var his = d3.select("#distribution")
+
+    //margins, width, and height of the chart
+    var margin = {top: 50, right: 30, bottom: 30, left: 40},
+    width = 1000 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
     //create the chart
-    var chart = d3.select(".chart")
+    var chart = his.select(".chart")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
